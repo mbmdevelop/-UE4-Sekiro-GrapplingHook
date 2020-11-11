@@ -100,7 +100,7 @@ void AHookeablePoint::CalculateHookAndLandLoc()
 	else
 		draw_debug_in_play = false;
 
-	FCollisionQueryParams trace_params(TEXT("HookeablePointTrace"), true, this);
+	FCollisionQueryParams trace_params(TEXT("HookeablePointTrace"), false, this);
 	trace_params.bReturnPhysicalMaterial = false;
 
 	FVector trace_end_offset = FVector(0.0f, 0.0f, -1.0f) * line_trace_length_;

@@ -170,7 +170,7 @@ void ASekiroHookPJCharacter::CheckKunaiCollision(const FVector& next_frame_loc)
 {
   if (kunai_->IsValidLowLevel())
   {
-    FCollisionQueryParams trace_params(TEXT("KunaiCollisionTrace"), true);
+    FCollisionQueryParams trace_params(TEXT("KunaiCollisionTrace"), false);
     trace_params.bReturnPhysicalMaterial = false;
 
     FHitResult hit_details = FHitResult(ForceInit);
@@ -682,7 +682,7 @@ void ASekiroHookPJCharacter::PlayHookJumpMontage()
 
 void ASekiroHookPJCharacter::CanWalkOffMeshLedges()
 {
-  FCollisionQueryParams trace_params(TEXT("WalkOffLedgeTester"), true, this);
+  FCollisionQueryParams trace_params(TEXT("WalkOffLedgeTester"), false, this);
 
   FVector trace_end_offset = FVector(0.0f, 0.0f, -1.0f) * line_trace_distance_;
 
